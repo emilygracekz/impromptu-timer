@@ -1,2 +1,2 @@
 # impromptu-timer
-Count down seven minutes
+⏰ Count down seven minutes

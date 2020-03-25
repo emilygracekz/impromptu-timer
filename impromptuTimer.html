@@ -1,29 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Countdown Timer</title>
-  <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="impromptuTimer.css">
-</head>
-<body>
-  <div class="timer">
-    <div class="timer__controls">
-      <button data-time="20" class="timer__button">20 Secs</button>
-      <button data-time="300" class="timer__button">Work 5</button>
-      <button data-time="900" class="timer__button">Quick 15</button>
-      <button data-time="1200" class="timer__button">Snack 20</button>
-      <button data-time="3600" class="timer__button">Lunch Break</button>
-      <form name="customForm" id="custom">
-        <input type="text" name="minutes" placeholder="Enter Minutes">
-      </form>
-    </div>
-    <div class="display">
-      <h1 class="display__time-left"></h1>
-      <p class="display__end-time"></p>
-    </div>
-  </div>
 
-  <script src="impromptuTimer.js"></script>
+<head>
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impromptu Timer</title>
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="impromptuTimer.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="quoteBox">
+            <h2></h2>
+            <h3></h3>
+        </div>
+        <div class="timer">
+            <div class="display">
+                <h1 class="display__time-left">7:00</h1>
+                    <button data-time= "420">Start</button>
+            </div>
+        </div>
+    </div>
+    <script src="impromptuTimer.js"></script>
 </body>
+
 </html>

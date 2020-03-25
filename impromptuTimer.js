@@ -1,5 +1,6 @@
 let countdown;
 const timerDisplay = document.querySelector(".display__time-left");
+const quoteDisplay = document.querySelector(".quoteBox");
 const button = document.querySelector(".display button");
 const endpoint = "https://andruxnet-random-famous-quotes.p.rapidapi.com/?count=10&cat=movies";
 
@@ -57,6 +58,9 @@ function startTimer() {
 	console.log(err);
 });
 
+//display quote
+const display = `${response.quote}:${response.author}`;
+quoteDisplay.textContent = display;
 
 }
 

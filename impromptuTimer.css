@@ -1,99 +1,108 @@
 html {
-    box-sizing: border-box;
-    font-size: 10px;
-    background: #74ebd5;    
-    background: linear-gradient(to top, #74ebd5, #acb6e5); 
-
-  }
-
-  body {
-    margin: 0;
-    text-align: center;
-    font-family: 'Inconsolata', monospace;
-  }
-  
-  .quoteBox {
-    background-color: white;
-    width: 500px;
-    height: 100px;
-    border-radius: 30px;
-  }
-
-  h2 h3 {
-    color: #2b2d2f;
-  }
-
-  .display__time-left {
-    font-weight: 100;
-    font-size: 20rem;
-    margin: 0;
-    color: white;
-    text-shadow: 4px 4px 0 rgba(0,0,0,0.05);
-  }
-  
-  .timer {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-  
-button {
-    font-family: 'Inconsolata', monospace;
-    font-size: 25px;
-    letter-spacing: 1.5px;
-    color: #fff;
-    background: #acb6e5;
-    padding: 10px;
-    border-radius: 30px;
-    width: 210px;
-    border: #acb6e5;
+  box-sizing: border-box;
+  font-size: 10px;
+  background: #74ebd5;
+  background: linear-gradient(to top, #74ebd5, #acb6e5);
 }
 
-  .display {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
- h2 {
-    color: #fff;
-    font-family: 'Inconsolata', monospace;
-    letter-spacing: 1.5px;
-    font-weight: 800;
-    text-align: left;
-    font-size: 35px;
- }
-
- /* .container {
-     padding-left: 25px;
-     padding-top: 10px;
- } */
-
-  /* MOBILE!!! */
-/* screens under 761 px */
-@media screen and (max-width: 761px) {
-    .display__time-left {
-        font-size: 15rem;
-    }
-
-    button {
-        font-size:20px;
-        width: 150px;
-
-    }
-
-}
-
-/* .begin {
-    width: 20px;
+/* .container {
+  padding: 30px;
 } */
 
+body {
+  margin: 0;
+  text-align: center;
+  font-family: "Inconsolata", monospace;
+}
+
+.quoteBox {
+  background-color: white;
+  border-radius: 30px;
+}
+
+h2 h3 {
+  color: #2b2d2f;
+}
+
+.display__time-left {
+  margin: 0;
+  color: white;
+  text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  font-family: "Inconsolata", monospace;
+  letter-spacing: 1.5px;
+  color: #fff;
+  background: #acb6e5;
+  padding: 10px;
+  border-radius: 30px;
+  border: #acb6e5;
+}
+
+.display {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+  color: #fff;
+  font-family: "Inconsolata", monospace;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  text-align: left;
+  font-size: 35px;
+}
+
+/* MOBILE!!! */
+/* screens under 761 px */
+@media screen and (max-width: 761px) {
+  .quoteBox {
+    width: 300px;
+    height: 75px;
+  }
+  .display__time-left {
+    font-size: 15rem;
+    font-weight: 40rem;
+  }
+
+  .timer {
+    min-height: 100vh;
+  }
+
+  button {
+    font-size: 18px;
+    width: 120px;
+  }
+}
 
 /* COMPUTER */
 /* Screens bigger than 762 */
 @media (min-width: 762px) {
+  .quoteBox {
+    width: 500px;
+    height: 100px;
+  }
 
+  .display__time-left {
+    font-weight: 90;
+    font-size: 15rem;
+  }
 
+  .timer {
+    min-height: 100vh;
+  }
+
+  button {
+    font-size: 25px;
+    width: 210px;
+  }
 }

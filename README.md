@@ -1,2 +1,1 @@
-# impromptu-timer
-⏰ Count down seven minutes
+This is a starter template for [Learn Next.js](https://nextjs.org/learn).

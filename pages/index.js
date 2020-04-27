@@ -53,7 +53,7 @@ export default function Home() {
           font-weight: 600;
           font-size: 0.8rem;
           border-style: groove;
-          color: #fc9292;
+          background-color: #fc9292;
 
         }
 
@@ -67,14 +67,12 @@ export default function Home() {
         }
 
         .button-primary-active {
-          background-color: #3151ff;
           border: 1px solid #152684;
           background-color: #fc9292;
 
         }
 
         .button-primary-inactive {
-          background-color: #3151ff;
           border: 1px solid #152684;
           background-color: #fc9292;
         }

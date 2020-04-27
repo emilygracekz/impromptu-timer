@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+let countdown;
+
 
 const Timer = () => {
-    const [seconds, setSeconds] = useState(0);
+    const [counter, setCounter] = React.useState(420);
     const [isActive,  setIsActive] = useState(false);
 
     function toggle() {
@@ -13,34 +15,16 @@ const Timer = () => {
         setIsActive(false);
     }
 
-    useEffect(() => {
-        let interval = null;
-        if (isActive) {
-            interval = setInterval(() => {
-                setSeconds(seconds => seconds +1);
-            }, 1000);
-        } else if (!isActive && seconds !==0) {
-            clearInterval(interval);
-        }
-
-        return () => clearInterval(interval);
-    }, [isActive, seconds]);
-
-        return(
+    React.useEffect(() => {
+        const countdown = counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
+        return () => clearInterval(countdown);
+    }, [counter]);
+    
+        return (
             <div className="app">
-                <div className="time">
-                    {seconds}s
-                </div>
-                <div className="row">
-                    <button className={`button button-primary button-primary-${isActive ? 'active' : 'inactive'}`} onClick={toggle}>
-                    {isActive ? 'Pause' : 'Start'}
-                    </button>
-                    <button className="button" onClick={reset}>
-                        Reset
-                    </button>
-                </div>
+                <div>Countdown: {counter}</div>
             </div>
         );
-    };
+    }
 
 export default Timer;

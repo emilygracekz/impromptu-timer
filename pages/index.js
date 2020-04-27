@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Timer from './components/timer';
+import Timer from "./components/timer";
 
 export default function Home() {
   return (
@@ -10,11 +10,10 @@ export default function Home() {
       </Head>
 
       <main>
-        <p className="title">
+        <p className="header">
           IMPROMPTU <strong>TIMER</strong>
+          <Timer />
         </p>
-
-
       </main>
 
       <footer>
@@ -29,6 +28,57 @@ export default function Home() {
       </footer>
 
       <style jsx>{`
+        .app {
+          text-align: center;
+          background-color: #282c34;
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          font-size: calc(10px + 2vmin);
+          color: white;
+        }
+
+        .time {
+          font-size: 3rem;
+          padding: 2rem;
+        }
+
+        .button {
+          padding: 0.6rem 1.5rem;
+          margin: 0.4rem;
+          border-radius: 3px;
+          text-transform: uppercase;
+          font-weight: 600;
+          font-size: 0.8rem;
+          border-style: groove;
+          color: #fc9292;
+
+        }
+
+        .button:focus {
+          outline-width: 0;
+        }
+
+        .button-primary:hover {
+          background-color: #2641d4;
+          border: 1px solid #1b1f2b;
+        }
+
+        .button-primary-active {
+          background-color: #3151ff;
+          border: 1px solid #152684;
+          background-color: #fc9292;
+
+        }
+
+        .button-primary-inactive {
+          background-color: #3151ff;
+          border: 1px solid #152684;
+          background-color: #fc9292;
+        }
+
         .container {
           min-height: 100vh;
           padding: 0 0.5rem;
@@ -47,17 +97,8 @@ export default function Home() {
           align-items: center;
         }
 
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
+        header {
+          padding-top: 20px;
         }
 
         .description {
@@ -69,10 +110,6 @@ export default function Home() {
           display: flex;
           align-items: center;
           justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
         }
 
         .logo {
@@ -95,6 +132,10 @@ export default function Home() {
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
+          background-color: #d6e06b;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
         * {

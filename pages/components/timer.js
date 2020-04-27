@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-let countdown;
-
 
 const Timer = () => {
-    const [seconds, setSeconds] = React.useState(420);
+    const [seconds, setSeconds] = useState(420);
     const [isActive,  setIsActive] = useState(false);
 
     function toggle() {
@@ -15,12 +13,19 @@ const Timer = () => {
         setIsActive(false);
     }
 
-    React.useEffect(() => {
+    function displayTimeLeft(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const remainderSeconds = seconds % 60;
+        return `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
+    }
+
+    useEffect(() => {
         let interval = null;
         if (isActive) {
          interval = setInterval(() => {
              setSeconds(seconds => seconds - 1);
          }, 1000);
+         
         } else if (!isActive && seconds !== 0) {
             clearInterval(interval);
         }
@@ -29,8 +34,10 @@ const Timer = () => {
     
 
         return (
+            <div className="container">
             <div className="app">
-                <div className='time'>Countdown: {seconds}</div>
+                <div className='time'>Countdown: {displayTimeLeft(seconds)}</div>
+
                 <div className="row">
                     <button className={`button button-primary button-primary-${isActive ? 'active' : 'inactive'}`} onClick={toggle}>
                     {isActive ? 'Pause' : 'Start'}
@@ -39,7 +46,61 @@ const Timer = () => {
                     </button>
                 </div>
             </div>
-        );
+        
+
+<style jsx>{`
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.time {
+  font-size: 3rem;
+  padding: 2rem;
+  text-align: center;
+  color: #f0f6f7;
+  font-weight: bold;
+
+}
+
+.button {
+  padding: .6rem 1.5rem;
+  margin: .4rem;
+  border-radius: 30px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: .8rem;
+}
+
+.row {
+    text-align: center;
+}
+
+.button:focus {
+  outline-width: 0;
+}
+
+.button-primary:hover {
+  background-color: #2641d4;
+  border: 2px solid #1b1f2b;
+}
+
+.button-primary-active {
+  background-color: #fc9292;
+  border: 2px solid #e06c77;
+  color: white;
+}
+
+.button-primary-inactive {
+  background-color: #fc9292;
+  border: 2px solid #e06c77;
+  color: white;
+}
+`}</style>
+</div>
+);
 };
+
 
 export default Timer;

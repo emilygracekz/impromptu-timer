@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Timer from "./components/timer";
+import Quote from "./components/quote";
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
         <p className="header">
           IMPROMPTU <strong>TIMER</strong>
         </p>
-
+        <Quote />
         <Timer />
       </main>
 
@@ -37,6 +38,10 @@ export default function Home() {
           flex-direction: column;
           justify-content: center;
           align-items: center;
+        }
+
+        .header {
+          color: #181533;
         }
 
         main {

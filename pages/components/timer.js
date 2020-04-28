@@ -36,7 +36,7 @@ const Timer = () => {
         return (
             <div className="container">
             <div className="app">
-                <div className='time'>Countdown: {displayTimeLeft(seconds)}</div>
+                <div className='time'> {displayTimeLeft(seconds)}</div>
 
                 <div className="row">
                     <button className={`button button-primary button-primary-${isActive ? 'active' : 'inactive'}`} onClick={toggle}>
@@ -56,12 +56,11 @@ const Timer = () => {
 }
 
 .time {
-  font-size: 3rem;
+  font-size: 7rem;
   padding: 2rem;
   text-align: center;
   color: #f0f6f7;
   font-weight: bold;
-
 }
 
 .button {
@@ -71,6 +70,7 @@ const Timer = () => {
   text-transform: uppercase;
   font-weight: 600;
   font-size: .8rem;
+  
 }
 
 .row {
@@ -82,8 +82,8 @@ const Timer = () => {
 }
 
 .button-primary:hover {
-  background-color: #2641d4;
-  border: 2px solid #1b1f2b;
+  background-color: #d3d4d7;
+  border: 2px solid #86817c;
 }
 
 .button-primary-active {

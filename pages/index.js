@@ -1,33 +1,27 @@
 import Head from "next/head";
 import Timer from "./components/timer";
 import Quote from "./components/quote";
+import { Buttons } from './components/parts';
 
 export default function Home() {
   return (
     <div className="container">
       <Head>
-            <title>Impromptu Timer</title>
-            {/* <link rel="icon" href="/home.png" /> */}
+        <title>Impromptu Timer</title>
       </Head>
 
-
       <main>
-
-        <p className="header">
-          IMPROMPTU <strong>TIMER</strong>
-        </p>
-        <Quote />
+        <div className="header">
+          <p>
+            IMPROMPTU <strong>TIMER</strong>
+          </p>
+        </div>
         <Timer />
       </main>
 
       <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
+        <a href="https://github.com/emilygracekz">
+          <img src="/github.png" alt="github" className="logo" />
         </a>
       </footer>
 
@@ -41,7 +35,8 @@ export default function Home() {
         }
 
         .header {
-          color: #181533;
+          margin-top: 10px;
+          color: var(--black);
         }
 
         main {
@@ -52,19 +47,22 @@ export default function Home() {
           align-items: center;
         }
 
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
+        .p {
+          font-size: 20px;
         }
 
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
+        .footer {
+          height: 5em;
+          margin-bottom: 15px;
         }
 
         .logo {
-          height: 1em;
+          height: 2em;
+          margin-bottom: 15px;
+        }
+
+        .logo:hover {
+          opacity: 50%;
         }
 
         @media (max-width: 600px) {
@@ -83,7 +81,7 @@ export default function Home() {
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
-          background-color: #778bd9;
+          background-color: var(--purple);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -91,6 +89,16 @@ export default function Home() {
 
         * {
           box-sizing: border-box;
+        }
+
+        :root {
+          --purple: #778bd9;
+          --white: #f0f6f7;
+          --lightPink: #fc9292;
+          --darkPink: #e06c77;
+          --lightGray: #d3d4d7;
+          --darkGray: #86817c;
+          --black: #181533;
         }
       `}</style>
     </div>

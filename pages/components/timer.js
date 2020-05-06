@@ -21,7 +21,9 @@ const Timer = () => {
     if(seconds < 0) {
       return '0:00';
     }
-    return `${minutes}:${remainderSeconds < 10 ? "0" : ""}${remainderSeconds}`;
+    else {
+      return `${minutes}:${remainderSeconds < 10 ? "0" : ""}${remainderSeconds}`
+    };
   }
 
   useEffect(() => {

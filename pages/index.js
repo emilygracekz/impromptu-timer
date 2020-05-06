@@ -1,22 +1,17 @@
 import Head from "next/head";
 import Timer from "./components/timer";
 import Quote from "./components/quote";
-import { Buttons } from './components/parts';
 
 export default function Home() {
   return (
     <div className="container">
       <Head>
         <title>Impromptu Timer</title>
+        <link rel="icon" href="/home.png" />
       </Head>
-
-      <main>
-        <div className="header">
-          <p>
-            IMPROMPTU <strong>TIMER</strong>
-          </p>
-        </div>
+      <main>  
         <Timer />
+        <Quote />
       </main>
 
       <footer>
@@ -58,7 +53,7 @@ export default function Home() {
 
         .logo {
           height: 2em;
-          margin-bottom: 15px;
+          margin-bottom: 10px;
         }
 
         .logo:hover {
@@ -96,6 +91,8 @@ export default function Home() {
           --white: #f0f6f7;
           --lightPink: #fc9292;
           --darkPink: #e06c77;
+          --lightBlue: #7facd6;
+          --darkBlue: #33539e;
           --lightGray: #d3d4d7;
           --darkGray: #86817c;
           --black: #181533;

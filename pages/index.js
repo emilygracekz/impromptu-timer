@@ -7,7 +7,7 @@ export default function Home() {
     <div className="container">
       <Head>
         <title>Impromptu Timer</title>
-        <link rel="icon" href="/home.png" />
+        <link rel="icon" href="/timerpic.png" />
       </Head>
       <main>  
         <Timer />

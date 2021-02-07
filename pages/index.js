@@ -1,24 +1,18 @@
-import Head from "next/head";
-import Timer from "./components/timer";
-import Quote from "./components/quote";
+import Head from 'next/head'
+import Timer from './components/timer'
+import Quote from './components/quote'
 
 export default function Home() {
   return (
-    <div className="container">
+    <div className='container'>
       <Head>
         <title>Impromptu Timer</title>
-        <link rel="icon" href="/timerpic.png" />
+        <link rel='icon' href='/timerpic.png' />
       </Head>
-      <main>  
+      <main>
         <Timer />
         <Quote />
       </main>
-
-      <footer>
-        <a href="https://github.com/emilygracekz">
-          <img src="/github.png" alt="github" className="logo" />
-        </a>
-      </footer>
 
       <style jsx>{`
         .container {
@@ -46,11 +40,6 @@ export default function Home() {
           font-size: 20px;
         }
 
-        .footer {
-          height: 5em;
-          margin-bottom: 15px;
-        }
-
         .logo {
           height: 2em;
           margin-bottom: 10px;
@@ -76,7 +65,7 @@ export default function Home() {
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
-          background-color: var(--purple);
+          background: var(--purple)
           display: flex;
           align-items: center;
           justify-content: center;
@@ -99,5 +88,5 @@ export default function Home() {
         }
       `}</style>
     </div>
-  );
+  )
 }

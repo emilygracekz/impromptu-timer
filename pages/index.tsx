@@ -4,7 +4,7 @@ import Quote from './components/quote'
 
 const Home = () => {
   return (
-    <div className='container'>
+    <section className='container'>
       <Head>
         <title>Impromptu Timer</title>
         <link rel='icon' href='/timerpic.png' />
@@ -87,7 +87,7 @@ const Home = () => {
           --black: #181533;
         }
       `}</style>
-    </div>
+    </section>
   )
 }
 

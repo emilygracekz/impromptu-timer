@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Timer from './components/timer'
-import Quote from './components/quote'
+import Timer from '../components/timer'
+import Quote from '../components/quote'
 
 const Home = () => {
   return (

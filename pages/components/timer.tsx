@@ -1,23 +1,24 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react'
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect, FunctionComponent } from 'react'
 
-const Timer = () => {
-  const [seconds, setSeconds] = useState(420)
+const Timer: FunctionComponent = () => {
+  const [seconds, setSeconds] = useState<number>(420)
   const [isActive, setIsActive] = useState(false)
 
-  function toggle() {
+  const toggleIsActive = () => {
     setIsActive(!isActive)
   }
 
-  function reset() {
+  const resetTimer = () => {
     setSeconds(420)
     setIsActive(false)
   }
 
-  function displayTimeLeft(seconds) {
+  const displayTimeLeft = (seconds) => {
     const minutes = Math.floor(seconds / 60)
     const remainderSeconds = seconds % 60
+
     if (seconds < 0) {
       return '0:00'
     } else {
@@ -37,7 +38,7 @@ const Timer = () => {
     return () => clearInterval(interval)
   }, [isActive, seconds])
 
-  const Container = css`
+  const TimerStyle = css`
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -50,29 +51,25 @@ const Timer = () => {
       font-weight: bold;
     }
 
+    .row {
+      text-align: center;
+    }
+
     @media (min-width: 650px) {
       .time {
-        font-size: 18rem;
+        font-size: 16rem;
         padding: 3px;
       }
     }
   `
 
-  const Button = css`
+  const ButtonStyle = css`
     padding: 0.6rem 1.5rem;
     margin: 10px;
     border-radius: 30px;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 0.8rem;
-
-    .row {
-      text-align: center;
-    }
-
-    .button:focus {
-      outline-width: 0;
-    }
 
     .button-primary:hover {
       background-color: var(--lightGray);
@@ -93,34 +90,24 @@ const Timer = () => {
   `
 
   return (
-    // <StyledTimer>
-    <div css={Container}>
-      <div className='app'>
-        <div className='time'> {displayTimeLeft(seconds)}</div>
-        <div className='row' css={Button}>
-          <button
-            className={`button button-primary button-primary-${
-              isActive ? 'active' : 'inactive'
-            }`}
-            onClick={toggle}
-          >
-            {isActive ? 'Pause' : 'Start'}
-          </button>
-          <button className='button' onClick={reset}>
-            Reset
-          </button>
-        </div>
+    <section css={TimerStyle}>
+      <div className='time'> {displayTimeLeft(seconds)}</div>
+      <div className='row' css={ButtonStyle}>
+        <button
+          css={ButtonStyle}
+          className={`button button-primary button-primary-${
+            isActive ? 'active' : 'inactive'
+          }`}
+          onClick={toggleIsActive}
+        >
+          {isActive ? 'Pause' : 'Start'}
+        </button>
+        <button className='button' css={ButtonStyle} onClick={resetTimer}>
+          Reset
+        </button>
       </div>
-    </div>
-    // <StyledTimer />
+    </section>
   )
 }
 
 export default Timer
-
-// green: 'rgb(100,182,93)',
-// purple: 'rgb(129,94,221)',
-// blue: 'rgb(74,139,244)',
-// red: 'rgb(229,69,60)',
-// orange: 'rgb(227,140,78)',
-// black: 'rgb(14, 17, 22)',

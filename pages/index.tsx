@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Timer from './components/timer'
 import Quote from './components/quote'
 
-export default function Home() {
+const Home = () => {
   return (
     <div className='container'>
       <Head>
@@ -65,7 +65,7 @@ export default function Home() {
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
-          background: var(--purple)
+          background: var(--purple);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -90,3 +90,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home
